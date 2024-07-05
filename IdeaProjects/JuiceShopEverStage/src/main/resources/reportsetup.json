@@ -1,0 +1,13 @@
+{
+  "theme": "DARK",
+  "encoding": "utf-8",
+  "protocol": "HTTPS",
+  "timelineEnabled": false,
+  "offlineMode": false,
+  "thumbnailForBase64": false,
+  "documentTitle": "Juice Shop Automation Reports",
+  "reportName": "<img src='C:/Users/ragus/IdeaProjects/JuiceShopEverStage/src/main/resources/LogoEverStage.jpeg' alt='Logo' style='width: 90px; height: auto;'>",
+  "timeStampFormat": "MMM dd, yyyy HH:mm:ss a",
+  "js": "",
+  "css": ""
+}
