@@ -1,4 +1,5 @@
 import com.everstage.juiceshop.constants.FrameworkConstants;
+import com.everstage.juiceshop.customexceptions.InvalidObjectMapperDetailsException;
 import com.everstage.juiceshop.pojo.LoginInputBuilder;
 import com.everstage.juiceshop.utils.DynamicXpath;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -28,15 +29,15 @@ public class BasicTest {
         try {
             userCredentials = objectMapper.readValue(new File(FrameworkConstants.getLOGIN_JSON_PATH()), LoginInputBuilder.class);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new InvalidObjectMapperDetailsException("Verify json file path and Class file");
         }
 
         WebDriver driver=new ChromeDriver();
         driver.get(FrameworkConstants.getWEB_LOGIN_URL());
         driver.manage().window().maximize();
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(FrameworkConstants.getEXP_TIME_WAIT()));
 
         // Sweet Alert
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(FrameworkConstants.getEXP_TIME_WAIT()));
         String btnDismiss = DynamicXpath.getDesiredXpath(Locators.getBASE_BUTTON(), "Dismiss");
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(btnDismiss))).click();
 

@@ -42,3 +42,9 @@ l
 <src/main/java/com/everstage/juiceshop/utils/ExcelReader.java,2\4\244fbce15f413c9151159978733a8d03272b0ee9
 i
 9src/main/java/com/everstage/juiceshop/pojo/LoginJson.java,d\d\dd730f2a6647baaf40af51c50dff154c4fbca505
+k
+;src/main/java/com/everstage/juiceshop/customexceptions.java,b\1\b1c3731a69effa4dee36ca0acfdc011dc22fb48f
+~
+Nsrc/main/java/com/everstage/juiceshop/customexceptions/FrameworkException.java,7\7\772cb955c0a5b2843d77193266a7fb46a8ef708e
+
+_src/main/java/com/everstage/juiceshop/customexceptions/InvalidObjectMapperDetailsException.java,f\a\fa11f5ec0807fdca6f9a9c153b5e5705c37c5b44
