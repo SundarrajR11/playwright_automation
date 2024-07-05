@@ -1,1 +1,1 @@
-# APIAutomationFramework
+# Juice Shop UI and API AutomationFramework
