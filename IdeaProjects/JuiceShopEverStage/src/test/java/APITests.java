@@ -1,17 +1,14 @@
-import com.everstage.juiceshop.pojo.ReqBodyForAddressCreationBuilder;
 import com.everstage.juiceshop.pojo.ReqBodyForCardCreationBuilder;
 import com.everstage.juiceshop.requestBuilders.RequestBuilders;
-import com.everstage.juiceshop.utils.FakerUtils;
 import com.everstage.juiceshop.utils.RandomValueProvider;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import static io.restassured.RestAssured.*;
+
 import static org.hamcrest.Matchers.equalTo;
 
-public final class APITest {
-    private APITest(){}
+public final class APITests {
+    private APITests(){}
 
     int id =0;
     @Test()
@@ -70,7 +67,8 @@ public final class APITest {
                 .assertThat()
                 .statusCode(200)
                 .body("data",equalTo("Card deleted successfully."))
-                .body("status",equalTo("success"));
+                .body("status",equalTo("success"))
+                .log();
     }
 
 }
