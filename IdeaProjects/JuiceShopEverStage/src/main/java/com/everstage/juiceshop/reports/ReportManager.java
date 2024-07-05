@@ -5,9 +5,4 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public final class ReportManager {
     private ReportManager(){}
-
-    public static void main(String[] args) {
-
-
-    }
 }

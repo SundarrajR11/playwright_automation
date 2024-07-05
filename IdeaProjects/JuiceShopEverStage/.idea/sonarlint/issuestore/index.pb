@@ -48,3 +48,11 @@ k
 Nsrc/main/java/com/everstage/juiceshop/customexceptions/FrameworkException.java,7\7\772cb955c0a5b2843d77193266a7fb46a8ef708e
 è
 _src/main/java/com/everstage/juiceshop/customexceptions/InvalidObjectMapperDetailsException.java,f\a\fa11f5ec0807fdca6f9a9c153b5e5705c37c5b44
+Z
+*src/test/java/ClickRadioBtnInWebTable.java,1\9\193518281914154e4f6572720c42fc1e684ce86e
+N
+src/test/java/ClickByWait.java,7\1\718bdf969b40bf3cefe988cd5d021f653d01bc35
+Q
+!src/test/java/ClickAfterWait.java,a\f\af0bb160c86f8775425a90e206009829c0139c7d
+W
+'src/test/java/ClickButtonAfterWait.java,8\e\8e11d85842bd8402926ac2de1fe48d1ece9499b0

@@ -51,74 +51,30 @@ public class BasicTest {
         String desiredProduct = DynamicXpath.getDesiredXpath(Locators.getBASE_PRODUCT(),userCredentials.getProduct());
         WebElement button= wait.until(ExpectedConditions.elementToBeClickable(By.xpath(desiredProduct)));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", button);
-        String btnYourBasket = DynamicXpath.getDesiredXpath(Locators.getBASE_BUTTON(),"Your Basket");
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(btnYourBasket)))).click();
+        ClickButtonAfterWait.waitAndClick(driver,wait,"Your Basket");
 
         // Checkout Page
         ((JavascriptExecutor) driver).executeScript("location.reload()");
-        String btnCheckOut=DynamicXpath.getDesiredXpath(Locators.getBASE_BUTTON(),"Checkout");
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(btnCheckOut))))
-                .click();
+        ClickButtonAfterWait.waitAndClick(driver,wait,"Checkout");
+
 
         // Address selection
-        List<WebElement> rows =driver.findElements(By.xpath(Locators.getTABLE_ROW()));
-        List<WebElement> columns =driver.findElements(By.xpath(Locators.getTABLE_COLUMN()));
+        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,userCredentials.getNameForAddressSelection());
+        ClickButtonAfterWait.waitAndClick(driver,wait,"Continue");
 
-        outerLoop:for (WebElement row: rows) {
-                        for (WebElement column: columns) {
-                            if(column.getText().equalsIgnoreCase(userCredentials.getNameForAddressSelection())){
-                                    column.click();
-                                try {
-                                    Thread.sleep(3000);
-                                } catch (InterruptedException e) {
-                                    throw new RuntimeException(e);
-                                }
-                                break outerLoop;
-                }
-            }
-        }
-        String btnContinueAddress=DynamicXpath.getDesiredXpath(Locators.getBASE_BUTTON(),"Continue");
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(btnContinueAddress)))).click();
 
         // Delivery selection
-        List<WebElement> rowsDel =driver.findElements(By.xpath(Locators.getTABLE_ROW()));
-        List<WebElement> columnsDel =driver.findElements(By.xpath(Locators.getTABLE_ROW()));
-
-        outerLoop:for (WebElement row: rowsDel) {
-            for (WebElement column: columnsDel) {
-                if(column.getText().contains(userCredentials.getDeliveryType())){
-                    column.click();
-                    Thread.sleep(3000);
-                    break outerLoop;
-                }
-            }
-        }
-        String btnContinueDelivery=DynamicXpath.getDesiredXpath(Locators.getBASE_BUTTON(),"Continue");
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(btnContinueDelivery)))).click();
+        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,userCredentials.getDeliveryType());
+        ClickButtonAfterWait.waitAndClick(driver,wait,"Continue");
 
         // Card selection
-        List<WebElement> rowsPay =driver.findElements(By.xpath(Locators.getTABLE_ROW()));
-        List<WebElement> columnsPay =driver.findElements(By.xpath(Locators.getTABLE_ROW()));
-        outerLoop:for (WebElement row: rowsPay) {
-            for (WebElement column: columnsPay) {
-                if(column.getText().contains(userCredentials.getCardHolderNameForCardSelection())){
-                    String desiredXpath=DynamicXpath.
-                            getDesiredXpath(Locators.getBASE_RADIO(),userCredentials.getCardHolderNameForCardSelection());
-                    wait.until(ExpectedConditions
-                            .elementToBeClickable(driver.findElement(By.xpath(desiredXpath)))).click();
-                    Thread.sleep(3000);
-                    break outerLoop;
-                }
-            }
-        }
-        String btnContinueCardDetails=DynamicXpath.getDesiredXpath(Locators.getBASE_BUTTON(),"Continue");
-        wait.until(ExpectedConditions
-                .visibilityOf(driver.findElement(By.xpath(btnContinueCardDetails)))).click();
+
+        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,userCredentials.getCardHolderNameForCardSelection());
+        ClickButtonAfterWait.waitAndClick(driver,wait,"Continue");
 
         // Place Order Page
-        String btnPlaceYourOrderAndPay=DynamicXpath.getDesiredXpath(Locators.getBASE_BUTTON(),"Place your order and pay");
-        wait.until(ExpectedConditions
-                .elementToBeClickable(driver.findElement(By.xpath(btnPlaceYourOrderAndPay)))).click();
+
+        ClickButtonAfterWait.waitAndClick(driver,wait,"Place your order and pay");
 
         //Assertion
         JavascriptExecutor js=((JavascriptExecutor) driver);
