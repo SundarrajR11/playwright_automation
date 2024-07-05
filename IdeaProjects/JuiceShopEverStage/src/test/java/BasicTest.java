@@ -72,17 +72,17 @@ public class BasicTest {
 
 
         // Address selection
-        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,userCredentials.getNameForAddressSelection());
+        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,wait,userCredentials.getNameForAddressSelection());
         ClickButtonAfterWait.waitAndClick(driver,wait,"Continue");
 
 
         // Delivery selection
-        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,userCredentials.getDeliveryType());
+        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,wait,userCredentials.getDeliveryType());
         ClickButtonAfterWait.waitAndClick(driver,wait,"Continue");
 
         // Card selection
 
-        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,userCredentials.getCardHolderNameForCardSelection());
+        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,wait,userCredentials.getCardHolderNameForCardSelection());
         ClickButtonAfterWait.waitAndClick(driver,wait,"Continue");
 
         // Place Order Page

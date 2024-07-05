@@ -13,7 +13,7 @@ import java.util.List;
 public final class ClickRadioBtnInWebTable {
     private ClickRadioBtnInWebTable(){}
 
-    public static void clickRadioBtnInWebTable(WebDriver driver,String selection) {
+    public static void clickRadioBtnInWebTable(WebDriver driver,WebDriverWait wait,String selection) {
         List<WebElement> rowsPay =driver.findElements(By.xpath(Locators.getTABLE_ROW()));
         List<WebElement> columnsPay =driver.findElements(By.xpath(Locators.getTABLE_ROW()));
         outerLoop:for (WebElement row: rowsPay) {
@@ -21,7 +21,6 @@ public final class ClickRadioBtnInWebTable {
                 if(column.getText().contains(selection)){
                     String desiredXpath= DynamicXpath.
                             getDesiredXpath(Locators.getBASE_RADIO(),selection);
-                    WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(FrameworkConstants.getEXP_TIME_WAIT()));
                     wait.until(ExpectedConditions
                             .elementToBeClickable(driver.findElement(By.xpath(desiredXpath)))).click();
                     try {
