@@ -1,4 +1,8 @@
 {
   "email": "ragusundar935@gmail.com",
-  "password": "SunJuice@11"
+  "password": "SunJuice@11",
+  "product": "Banana Juice (1000ml)",
+  "nameForAddressSelection": "Sundarraj R",
+  "deliveryType": "Fast Delivery",
+  "cardHolderNameForCardSelection": "Sundarraj R"
 }

@@ -12,5 +12,6 @@ public final class FrameworkConstants {
     @Getter private static final String BASE_URI="http://localhost:3000";
     @Getter private static final String WEB_LOGIN_URL="http://localhost:3000/#/login";
     @Getter private static final int EXP_TIME_WAIT=20;
+    @Getter private static final String LOGIN_JSON_PATH  = System.getProperty("user.dir")+"/src/test/resources/jsons/new-user.json";
 
 }

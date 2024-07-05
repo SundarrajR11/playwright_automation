@@ -1,6 +1,7 @@
 import com.everstage.juiceshop.constants.FrameworkConstants;
 import com.everstage.juiceshop.pojo.LoginInputBuilder;
 import com.everstage.juiceshop.utils.DynamicXpath;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -19,10 +22,14 @@ public class BasicTest {
     @Test
     public void Test() throws InterruptedException {
 
-        LoginInputBuilder userCredentials=LoginInputBuilder.builder()
-                 .setEmail("ragusundar935@gmail.com")
-                 .setPassword("SunJuice@11")
-                 .build();
+        // Reading input from new-user.json using jackson-databind library
+        ObjectMapper objectMapper=new ObjectMapper();
+        LoginInputBuilder userCredentials= null;
+        try {
+            userCredentials = objectMapper.readValue(new File(FrameworkConstants.getLOGIN_JSON_PATH()), LoginInputBuilder.class);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         WebDriver driver=new ChromeDriver();
         driver.get(FrameworkConstants.getWEB_LOGIN_URL());
@@ -40,7 +47,7 @@ public class BasicTest {
         driver.findElement(By.xpath(Locators.getBUTTON_ME_WANT_IT())).click();
 
         // Product Selection
-        String desiredProduct = DynamicXpath.getDesiredXpath(Locators.getBASE_PRODUCT(), "Banana Juice (1000ml)");
+        String desiredProduct = DynamicXpath.getDesiredXpath(Locators.getBASE_PRODUCT(),userCredentials.getProduct());
         WebElement button= wait.until(ExpectedConditions.elementToBeClickable(By.xpath(desiredProduct)));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", button);
         String btnYourBasket = DynamicXpath.getDesiredXpath(Locators.getBASE_BUTTON(),"Your Basket");
@@ -58,10 +65,14 @@ public class BasicTest {
 
         outerLoop:for (WebElement row: rows) {
                         for (WebElement column: columns) {
-                            if(column.getText().equalsIgnoreCase("Name")){
+                            if(column.getText().equalsIgnoreCase(userCredentials.getNameForAddressSelection())){
                                     column.click();
+                                try {
                                     Thread.sleep(3000);
-                                    break outerLoop;
+                                } catch (InterruptedException e) {
+                                    throw new RuntimeException(e);
+                                }
+                                break outerLoop;
                 }
             }
         }
@@ -74,7 +85,7 @@ public class BasicTest {
 
         outerLoop:for (WebElement row: rowsDel) {
             for (WebElement column: columnsDel) {
-                if(column.getText().contains("Fast Delivery")){
+                if(column.getText().contains(userCredentials.getDeliveryType())){
                     column.click();
                     Thread.sleep(3000);
                     break outerLoop;
@@ -87,13 +98,11 @@ public class BasicTest {
         // Card selection
         List<WebElement> rowsPay =driver.findElements(By.xpath(Locators.getTABLE_ROW()));
         List<WebElement> columnsPay =driver.findElements(By.xpath(Locators.getTABLE_ROW()));
-        String name="HDFC";
         outerLoop:for (WebElement row: rowsPay) {
             for (WebElement column: columnsPay) {
-                if(column.getText().contains(name)){
-                    System.out.println(column.getText());
+                if(column.getText().contains(userCredentials.getCardHolderNameForCardSelection())){
                     String desiredXpath=DynamicXpath.
-                            getDesiredXpath(Locators.getBASE_RADIO(),name);
+                            getDesiredXpath(Locators.getBASE_RADIO(),userCredentials.getCardHolderNameForCardSelection());
                     wait.until(ExpectedConditions
                             .elementToBeClickable(driver.findElement(By.xpath(desiredXpath)))).click();
                     Thread.sleep(3000);

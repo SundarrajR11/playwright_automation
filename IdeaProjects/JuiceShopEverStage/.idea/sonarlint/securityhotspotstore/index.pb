@@ -38,3 +38,7 @@ L
 src/test/java/PracClass.java,a\c\ac31b8a50c4cc6725463968ead5c42da1dd296e6
 K
 src/test/java/Locators.java,6\9\69ccebb9cf160bf38c587197ceadf77b81f03f85
+l
+<src/main/java/com/everstage/juiceshop/utils/ExcelReader.java,2\4\244fbce15f413c9151159978733a8d03272b0ee9
+i
+9src/main/java/com/everstage/juiceshop/pojo/LoginJson.java,d\d\dd730f2a6647baaf40af51c50dff154c4fbca505
