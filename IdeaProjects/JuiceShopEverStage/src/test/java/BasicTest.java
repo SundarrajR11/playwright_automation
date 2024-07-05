@@ -11,6 +11,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -19,23 +21,34 @@ import java.time.Duration;
 import java.util.List;
 
 public class BasicTest {
+    static WebDriver driver=null;
+    static WebDriverWait wait=null;
+    static LoginInputBuilder userCredentials= null;
 
-    @Test
-    public void Test() throws InterruptedException {
 
+    @BeforeMethod
+    public void setUP(){
         // Reading input from new-user.json using jackson-databind library
         ObjectMapper objectMapper=new ObjectMapper();
-        LoginInputBuilder userCredentials= null;
+
         try {
             userCredentials = objectMapper.readValue(new File(FrameworkConstants.getLOGIN_JSON_PATH()), LoginInputBuilder.class);
         } catch (IOException e) {
             throw new InvalidObjectMapperDetailsException("Verify json file path and Class file");
         }
 
-        WebDriver driver=new ChromeDriver();
+        driver=new ChromeDriver();
         driver.get(FrameworkConstants.getWEB_LOGIN_URL());
         driver.manage().window().maximize();
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(FrameworkConstants.getEXP_TIME_WAIT()));
+        wait = new WebDriverWait(driver,Duration.ofSeconds(FrameworkConstants.getEXP_TIME_WAIT()));
+    }
+    @AfterMethod
+    public void tearDown(){
+        driver.quit();
+    }
+
+    @Test
+    public void Test() {
 
         // Sweet Alert
         String btnDismiss = DynamicXpath.getDesiredXpath(Locators.getBASE_BUTTON(), "Dismiss");
