@@ -56,3 +56,5 @@ Q
 !src/test/java/ClickAfterWait.java,a\f\af0bb160c86f8775425a90e206009829c0139c7d
 W
 'src/test/java/ClickButtonAfterWait.java,8\e\8e11d85842bd8402926ac2de1fe48d1ece9499b0
+J
+src/test/java/UITests.java,5\d\5de910d9eaf719410f4dc68b8213ab4f4eafdbd4
