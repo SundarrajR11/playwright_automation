@@ -36,3 +36,5 @@ K
 src/test/java/APITests.java,7\9\795627a18230ef1d83847c3b6cbe06ee927a64e4
 L
 src/test/java/PracClass.java,a\c\ac31b8a50c4cc6725463968ead5c42da1dd296e6
+K
+src/test/java/Locators.java,6\9\69ccebb9cf160bf38c587197ceadf77b81f03f85
