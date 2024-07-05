@@ -39,14 +39,12 @@ public class BasicTest {
         driver.findElement(By.xpath(Locators.getLOGIN_BUTTON())).click();
         driver.findElement(By.xpath(Locators.getBUTTON_ME_WANT_IT())).click();
 
-
-        // Product selection
+        // Product Selection
         String desiredProduct = DynamicXpath.getDesiredXpath(Locators.getBASE_PRODUCT(), "Banana Juice (1000ml)");
         WebElement button= wait.until(ExpectedConditions.elementToBeClickable(By.xpath(desiredProduct)));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", button);
         String btnYourBasket = DynamicXpath.getDesiredXpath(Locators.getBASE_BUTTON(),"Your Basket");
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(btnYourBasket))))
-                .click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(btnYourBasket)))).click();
 
         // Checkout Page
         ((JavascriptExecutor) driver).executeScript("location.reload()");
@@ -77,7 +75,6 @@ public class BasicTest {
         outerLoop:for (WebElement row: rowsDel) {
             for (WebElement column: columnsDel) {
                 if(column.getText().contains("Fast Delivery")){
-                    System.out.println(column.getText());
                     column.click();
                     Thread.sleep(3000);
                     break outerLoop;
