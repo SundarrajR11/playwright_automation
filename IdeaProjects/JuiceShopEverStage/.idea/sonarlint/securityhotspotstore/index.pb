@@ -52,3 +52,13 @@ Asrc/main/java/com/everstage/juiceshop/utils/JavaScriptRunner.java,c\7\c7b8afbd
 Xsrc/main/java/com/everstage/juiceshop/customexceptions/UnableToClickButtonException.java,0\b\0b6a3850d44e29136352e078f86774aab0c2c8be
 ‚
 Rsrc/main/java/com/everstage/juiceshop/customexceptions/NullValueSentException.java,2\2\226e2c88f22b9abf0da081370d2bbe46370779e6
+o
+?src/main/java/com/everstage/juiceshop/driver/DriverManager.java,3\4\340f3e32fc85c5c84a9c33bcf7329aeacfe8d081
+g
+7src/main/java/com/everstage/juiceshop/enums/Driver.java,9\1\9142c099fd827942f9ce67a4ca56ed1bb428a4e5
+o
+?src/main/java/com/everstage/juiceshop/driver/DriverFactory.java,4\d\4db5baeebf606212ff8bd55bda76c0b27e91220b
+z
+Jsrc/main/java/com/everstage/juiceshop/driver/DriverStarterandFinisher.java,d\5\d54ee79edaa269d54d3233292f7f43d50a41460f
+m
+=src/main/java/com/everstage/juiceshop/utils/ConfigReader.java,f\e\fe73b2b3a7e17fc45b8720b7a7f39cdd484904f5

@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.given;
 public final class RequestBuilders {
     private RequestBuilders(){}
 
-    public static RequestSpecification postCalls(){
+    public static RequestSpecification postCalls() {
         return given()
                 .baseUri(FrameworkConstants.getBASE_URI())
                 .header(String.valueOf(EHeaders.AUTHORIZATION),FrameworkConstants.getBEARER_AUTH())

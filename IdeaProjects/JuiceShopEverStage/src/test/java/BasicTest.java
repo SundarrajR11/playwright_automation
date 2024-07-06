@@ -1,5 +1,6 @@
 import com.everstage.juiceshop.constants.FrameworkConstants;
 import com.everstage.juiceshop.customexceptions.InvalidObjectMapperDetailsException;
+import com.everstage.juiceshop.driver.DriverManager;
 import com.everstage.juiceshop.pojo.LoginInputBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.openqa.selenium.WebDriver;
@@ -28,14 +29,14 @@ public class BasicTest {
             throw new InvalidObjectMapperDetailsException("Verify json file path and Class file");
         }
 
-        driver=new ChromeDriver();
+        driver=DriverManager.getInstance();
         driver.get(FrameworkConstants.getWEB_LOGIN_URL());
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver,Duration.ofSeconds(FrameworkConstants.getEXP_TIME_WAIT()));
     }
     @AfterMethod
     public void tearDown(){
-        driver.quit();
+       driver.quit();
     }
 
 }
