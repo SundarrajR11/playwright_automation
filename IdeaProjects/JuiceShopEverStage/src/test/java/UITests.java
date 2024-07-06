@@ -25,11 +25,13 @@ public class UITests extends BasicTest{
         // Product Selection
         String desiredProduct = DynamicXpath.getDesiredXpath(Locators.getBASE_PRODUCT(),userCredentials.getProduct());
         WebElement button= wait.until(ExpectedConditions.elementToBeClickable(By.xpath(desiredProduct)));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", button);
+        JavaScriptRunner.runJavaScript(driver,button,"arguments[0].click();");
+
+        // Navigate to Your Basket
         ClickButtonAfterWait.waitAndClick(driver,wait,"Your Basket");
 
         // Checkout Page
-        ((JavascriptExecutor) driver).executeScript("location.reload()");
+        JavaScriptRunner.runJavaScript(driver,"location.reload()");
         ClickButtonAfterWait.waitAndClick(driver,wait,"Checkout");
 
 
@@ -52,10 +54,8 @@ public class UITests extends BasicTest{
         ClickButtonAfterWait.waitAndClick(driver,wait,"Place your order and pay");
 
         //Assertion
-        JavascriptExecutor js=((JavascriptExecutor) driver);
-        List<WebElement> elements = (List<WebElement>) js.executeScript(
-                "return document.getElementsByClassName('confirmation');"
-        );
+        List<WebElement> elements = (List<WebElement>)JavaScriptRunner
+                .runJavaScriptAndObject(driver,"return document.getElementsByClassName('confirmation');");
 
         for (WebElement element:
                 elements) {

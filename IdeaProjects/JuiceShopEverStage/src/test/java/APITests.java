@@ -2,8 +2,11 @@ import com.everstage.juiceshop.pojo.ReqBodyForCardCreationBuilder;
 import com.everstage.juiceshop.requestBuilders.RequestBuilders;
 import com.everstage.juiceshop.utils.RandomValueProvider;
 import io.restassured.http.ContentType;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
+
+import java.io.File;
 
 import static org.hamcrest.Matchers.equalTo;
 

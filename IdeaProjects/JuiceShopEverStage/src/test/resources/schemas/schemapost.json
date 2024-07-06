@@ -1,0 +1,58 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "fullName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expMonth": {
+          "type": "number"
+        },
+        "expYear": {
+          "type": "number"
+        },
+        "UserId": {
+          "type": "number"
+        },
+        "updatedAt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "createdAt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cardNum": {
+          "type": "object",
+          "properties": {},
+          "required": []
+        }
+      },
+      "required": [
+        "id",
+        "fullName",
+        "expMonth",
+        "expYear",
+        "UserId",
+        "updatedAt",
+        "createdAt",
+        "cardNum"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}
