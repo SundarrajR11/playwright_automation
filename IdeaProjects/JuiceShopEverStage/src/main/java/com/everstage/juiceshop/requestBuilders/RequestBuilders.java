@@ -1,10 +1,11 @@
 package com.everstage.juiceshop.requestBuilders;
+
 import com.everstage.juiceshop.constants.FrameworkConstants;
 import com.everstage.juiceshop.enums.EHeaders;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 public final class RequestBuilders {
     private RequestBuilders(){}
 
@@ -12,6 +13,7 @@ public final class RequestBuilders {
         return given()
                 .baseUri(FrameworkConstants.getBASE_URI())
                 .header(String.valueOf(EHeaders.AUTHORIZATION),FrameworkConstants.getBEARER_AUTH())
+                .contentType(ContentType.JSON)
                 .log()
                 .all();
     }
