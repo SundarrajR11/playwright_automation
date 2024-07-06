@@ -7,7 +7,7 @@ import lombok.Getter;
 @Builder(setterPrefix = "set")
 public class ReqBodyForCardCreationBuilder {
     private String fullName;
-    private  long carNUm;
+    private long cardNum;
     private int expMonth;
     private int expYear;
 }

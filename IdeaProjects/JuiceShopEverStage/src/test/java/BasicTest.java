@@ -22,7 +22,6 @@ public class BasicTest {
     public void setUP(){
         // Reading input from new-user.json using jackson-databind library
         ObjectMapper objectMapper=new ObjectMapper();
-
         try {
             userCredentials = objectMapper.readValue(new File(FrameworkConstants.getLOGIN_JSON_PATH()), LoginInputBuilder.class);
         } catch (IOException e) {

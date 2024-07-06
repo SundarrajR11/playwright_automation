@@ -11,7 +11,7 @@ public class FakerUtils {
         return faker.name().fullName();
     }
     protected static long cardNumber(int digit){
-        return faker.number().randomNumber(digit,true);
+        return  faker.number().randomNumber(digit,true);
     }
     protected static int expMonth(int mStart,int mEnd){
         return faker.number().numberBetween(mStart,mEnd);

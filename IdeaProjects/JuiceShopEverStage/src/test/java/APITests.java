@@ -2,8 +2,11 @@ import com.everstage.juiceshop.pojo.ReqBodyForCardCreationBuilder;
 import com.everstage.juiceshop.requestBuilders.RequestBuilders;
 import com.everstage.juiceshop.utils.RandomValueProvider;
 import io.restassured.http.ContentType;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
+
+import java.io.File;
 
 import static org.hamcrest.Matchers.equalTo;
 
@@ -16,7 +19,7 @@ public final class APITests {
 
         ReqBodyForCardCreationBuilder reqBody=ReqBodyForCardCreationBuilder.builder()
                 .setFullName(RandomValueProvider.randomFullName())
-                .setCarNUm(RandomValueProvider.randomCardNumber())
+                .setCardNum(RandomValueProvider.randomCardNumber())
                 .setExpMonth(RandomValueProvider.randomExpMonth())
                 .setExpYear(RandomValueProvider.randomExpYear())
                 .build();
@@ -32,6 +35,7 @@ public final class APITests {
                 .assertThat()
                 .statusCode(201)
                 .contentType(ContentType.JSON)
+                .body(JsonSchemaValidator.matchesJsonSchema(new File("C:\\Users\\ragus\\IdeaProjects\\JuiceShopEverStage\\src\\test\\resources\\schemas\\schemapost.json")))
                 .log();
     }
     @Test(dependsOnMethods = "postCall",priority = 1)
