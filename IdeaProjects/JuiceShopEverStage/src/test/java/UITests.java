@@ -22,6 +22,8 @@ public class UITests extends BasicTest{
         driver.findElement(By.xpath(Locators.getLOGIN_EMAIL())).sendKeys(userCredentials.getEmail());
         driver.findElement(By.xpath(Locators.getLOGIN_PASSWORD())).sendKeys(userCredentials.getPassword());
         driver.findElement(By.xpath(Locators.getLOGIN_BUTTON())).click();
+
+        //Cookies Button
         driver.findElement(By.xpath(Locators.getBUTTON_ME_WANT_IT())).click();
 
         // Product Selection
@@ -57,7 +59,7 @@ public class UITests extends BasicTest{
 
         //Assertion
         List<WebElement> elements = (List<WebElement>)JavaScriptRunner
-                .runJavaScriptAndObject(driver,"return document.getElementsByClassName('confirmation');");
+                .runJavaScriptAndReturnObject(driver,"return document.getElementsByClassName('confirmation');");
 
         for (WebElement element:
                 elements) {

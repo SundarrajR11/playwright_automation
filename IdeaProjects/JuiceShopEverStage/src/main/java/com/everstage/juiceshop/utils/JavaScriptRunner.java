@@ -14,7 +14,7 @@ public final class JavaScriptRunner {
         ((JavascriptExecutor) driver).executeScript(javaScript, element);
     }
 
-    public static Object runJavaScriptAndObject(WebDriver driver, String javaScript){
+    public static Object runJavaScriptAndReturnObject(WebDriver driver, String javaScript){
         return ((JavascriptExecutor) driver).executeScript(javaScript);
     }
 

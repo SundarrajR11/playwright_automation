@@ -14,13 +14,6 @@ public final class APITests {
     @Test()
     public void postCall() {
 
-        /*String reqBody="{\n" +
-                "  \"fullName\": \"Sundarraj R\",\n" +
-                "  \"cardNum\": \"1234123412341234\",\n" +
-                "  \"expMonth\": \"12\",\n" +
-                "  \"expYear\": \"2080\"\n" +
-                "}";*/
-
         ReqBodyForCardCreationBuilder reqBody=ReqBodyForCardCreationBuilder.builder()
                 .setFullName(RandomValueProvider.randomFullName())
                 .setCarNUm(RandomValueProvider.randomCardNumber())
