@@ -11,21 +11,16 @@ import java.util.List;
 public final class ClickRadioBtnInWebTable {
     private ClickRadioBtnInWebTable(){}
 
-    public static void clickRadioBtnInWebTable(WebDriver driver,WebDriverWait wait,String rowLocator,String columnLocator,String baseRadiobtn,String selection) {
-        List<WebElement> rows =driver.findElements(By.xpath(rowLocator));
-        List<WebElement> columns =driver.findElements(By.xpath(columnLocator));
-        outerLoop:for (WebElement row: rows) {
-            for (WebElement column: columns) {
-                if(column.getText().contains(selection)){
-                    String desiredXpath= DynamicXpath.
-                            getDesiredXpath(baseRadiobtn,selection);
-                    wait.until(ExpectedConditions
-                            .elementToBeClickable(driver.findElement(By.xpath(desiredXpath)))).click();
-                    try {
-                        Thread.sleep(3000);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
+    public static void clickRadioBtnInWebTable(WebDriver driver, WebDriverWait wait, String rowLocator, String columnLocator, String baseRadiobtn, String selection) {
+        List<WebElement> rows = driver.findElements(By.xpath(rowLocator));
+        outerLoop:
+        for (WebElement row : rows) {
+            List<WebElement> columns = row.findElements(By.xpath(columnLocator));
+            for (WebElement column : columns) {
+                if (column.getText().contains(selection)) {
+                    String desiredXpath = DynamicXpath.getDesiredXpath(baseRadiobtn, selection);
+                    WebElement radioBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(desiredXpath)));
+                    radioBtn.click();
                     break outerLoop;
                 }
             }

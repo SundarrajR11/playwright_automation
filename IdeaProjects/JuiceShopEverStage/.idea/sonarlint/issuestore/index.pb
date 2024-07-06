@@ -48,3 +48,7 @@ x
 Hsrc/main/java/com/everstage/juiceshop/utils/ClickRadioBtnInWebTable.java,f\1\f1ea99db8f21876048cff897e309ea093f237102
 q
 Asrc/main/java/com/everstage/juiceshop/utils/JavaScriptRunner.java,c\7\c7b8afbddec664f980accf5b157e04303fced705
+ˆ
+Xsrc/main/java/com/everstage/juiceshop/customexceptions/UnableToClickButtonException.java,0\b\0b6a3850d44e29136352e078f86774aab0c2c8be
+‚
+Rsrc/main/java/com/everstage/juiceshop/customexceptions/NullValueSentException.java,2\2\226e2c88f22b9abf0da081370d2bbe46370779e6

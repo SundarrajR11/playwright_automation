@@ -19,7 +19,7 @@ public class BasicTest {
 
 
     @BeforeMethod
-    public void setUP(){
+    public void setUp(){
         // Reading input from new-user.json using jackson-databind library
         ObjectMapper objectMapper=new ObjectMapper();
         try {

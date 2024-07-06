@@ -9,7 +9,7 @@ public class ReqBodyForAddressCreationBuilder {
     private String city;
     private String country;
     private String fullName;
-    private int mobileNum;
+    private long mobileNum;
     private String state;
     private String streetAddress;
     private String zipCode;
