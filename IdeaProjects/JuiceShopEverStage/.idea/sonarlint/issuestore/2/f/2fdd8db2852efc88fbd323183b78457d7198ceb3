@@ -1,6 +1,2 @@
 
-‘
-java:S1192"NDefine a constant instead of duplicating this literal "Authorization" 3 times.(ç»œª8»‚É‹ˆ2J$3e2ac0d2-d01d-4156-855c-5b32d9e959a7
-ù
-java:S1192"µDefine a constant instead of duplicating this literal "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjIsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJyYWd1c3VuZGFyOTM1QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiM2UyNzZhZDkxZTk3OWViZjZlZTdhYjQyMDEzYjUwNmIiLCJyb2xlIjoiY3VzdG9tZXIiLCJkZWx1eGVUb2tlbiI6IiIsImxhc3RMb2dpbklwIjoiMC4wLjAuMCIsInByb2ZpbGVJbWFnZSI6Ii9hc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHQuc3ZnIiwidG90cFNlY3JldCI6IiIsImlzQWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDI0LTA3LTA1IDAyOjQ3OjM2LjU4NCArMDA6MDAiLCJ1cGRhdGVkQXQiOiIyMDI0LTA3LTA1IDAyOjQ3OjM2LjU4NCArMDA6MDAiLCJkZWxldGVkQXQiOm51bGx9LCJpYXQiOjE3MjAxNDc3ODN9.Fcn2gons5OSREwu-0a3aKF1mm7qYc8_KKnfmRct9mbneZgyMk6KwL6pwN_RsAbeL3FolEgn7wNMFwqE65WXqnAgv6nXH7BaRJA5ITQwswDI9vRUVhjFpQoDvjQ8_dl24pBFcqyeYBEZGXlNxVcpjFsiIJOFrLyqmpFW16NnWcks" 3 times.(ç»œª8¼‚É‹ˆ2J$084eaf22-d386-4ca8-a60d-0776ab044eec
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÓáÄ­8¶¤Å‹ˆ2J$237b485e-bfb2-436a-8014-c7bd6aed5f66
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÓáÄ­8˜ÆÛ²ˆ2J$6154ce10-5b68-4ee1-bf3a-4365c7e4cd13

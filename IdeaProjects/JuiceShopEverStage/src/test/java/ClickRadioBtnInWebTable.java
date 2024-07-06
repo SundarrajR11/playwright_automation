@@ -20,7 +20,7 @@ public final class ClickRadioBtnInWebTable {
             for (WebElement column: columnsPay) {
                 if(column.getText().contains(selection)){
                     String desiredXpath= DynamicXpath.
-                            getDesiredXpath(Locators.getBASE_RADIO(),selection);
+                            getDesiredXpath(Locators.getBASE_RADIOBUTTON(),selection);
                     wait.until(ExpectedConditions
                             .elementToBeClickable(driver.findElement(By.xpath(desiredXpath)))).click();
                     try {

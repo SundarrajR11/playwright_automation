@@ -40,3 +40,5 @@ J
 src/test/java/UITests.java,5\d\5de910d9eaf719410f4dc68b8213ab4f4eafdbd4
 S
 #src/test/java/JavaScriptRunner.java,1\8\1848d44a37d88fbe5ad9ec531098e9f550436280
+i
+9src/main/java/com/everstage/juiceshop/enums/EHeaders.java,e\0\e0b3b96f590f90920bbc531fb83435bf7d25358f
