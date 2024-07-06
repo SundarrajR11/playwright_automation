@@ -1,3 +1,5 @@
+package com.everstage.juiceshop.utils;
+
 import com.everstage.juiceshop.constants.FrameworkConstants;
 import com.everstage.juiceshop.utils.DynamicXpath;
 import org.openqa.selenium.By;
@@ -10,8 +12,8 @@ import java.time.Duration;
 public final class ClickButtonAfterWait {
     private ClickButtonAfterWait(){}
 
-    public static void waitAndClick(WebDriver driver,WebDriverWait wait,String buttonName) {
-        String desiredButton= DynamicXpath.getDesiredXpath(Locators.getBASE_BUTTON(),buttonName);
+    public static void waitAndClick(WebDriver driver,WebDriverWait wait,String baseBtnLocator,String buttonName) {
+        String desiredButton= DynamicXpath.getDesiredXpath(baseBtnLocator,buttonName);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(desiredButton)))).click();
     }
 }

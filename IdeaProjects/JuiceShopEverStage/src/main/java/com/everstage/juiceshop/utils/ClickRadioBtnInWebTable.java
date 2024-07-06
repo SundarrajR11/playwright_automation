@@ -1,3 +1,5 @@
+package com.everstage.juiceshop.utils;
+
 import com.everstage.juiceshop.constants.FrameworkConstants;
 import com.everstage.juiceshop.customexceptions.FrameworkException;
 import com.everstage.juiceshop.utils.DynamicXpath;
@@ -13,14 +15,14 @@ import java.util.List;
 public final class ClickRadioBtnInWebTable {
     private ClickRadioBtnInWebTable(){}
 
-    public static void clickRadioBtnInWebTable(WebDriver driver,WebDriverWait wait,String selection) {
-        List<WebElement> rowsPay =driver.findElements(By.xpath(Locators.getTABLE_ROW()));
-        List<WebElement> columnsPay =driver.findElements(By.xpath(Locators.getTABLE_ROW()));
+    public static void clickRadioBtnInWebTable(WebDriver driver,WebDriverWait wait,String rowLocator,String columnLocator,String baseRadiobtn,String selection) {
+        List<WebElement> rowsPay =driver.findElements(By.xpath(rowLocator));
+        List<WebElement> columnsPay =driver.findElements(By.xpath(columnLocator));
         outerLoop:for (WebElement row: rowsPay) {
             for (WebElement column: columnsPay) {
                 if(column.getText().contains(selection)){
                     String desiredXpath= DynamicXpath.
-                            getDesiredXpath(Locators.getBASE_RADIOBUTTON(),selection);
+                            getDesiredXpath(baseRadiobtn,selection);
                     wait.until(ExpectedConditions
                             .elementToBeClickable(driver.findElement(By.xpath(desiredXpath)))).click();
                     try {

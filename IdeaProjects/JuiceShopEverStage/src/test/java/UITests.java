@@ -1,6 +1,8 @@
+import com.everstage.juiceshop.utils.ClickButtonAfterWait;
+import com.everstage.juiceshop.utils.ClickRadioBtnInWebTable;
 import com.everstage.juiceshop.utils.DynamicXpath;
+import com.everstage.juiceshop.utils.JavaScriptRunner;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -28,30 +30,30 @@ public class UITests extends BasicTest{
         JavaScriptRunner.runJavaScript(driver,button,"arguments[0].click();");
 
         // Navigate to Your Basket
-        ClickButtonAfterWait.waitAndClick(driver,wait,"Your Basket");
+        ClickButtonAfterWait.waitAndClick(driver,wait,Locators.getBASE_BUTTON(),"Your Basket");
 
         // Checkout Page
         JavaScriptRunner.runJavaScript(driver,"location.reload()");
-        ClickButtonAfterWait.waitAndClick(driver,wait,"Checkout");
+        ClickButtonAfterWait.waitAndClick(driver,wait,Locators.getBASE_BUTTON(),"Checkout");
 
 
         // Address selection
-        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,wait,userCredentials.getNameForAddressSelection());
-        ClickButtonAfterWait.waitAndClick(driver,wait,"Continue");
+        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,wait,Locators.getTABLE_ROW(),Locators.getTABLE_COLUMN(),Locators.getBASE_RADIOBUTTON(),userCredentials.getNameForAddressSelection());
+        ClickButtonAfterWait.waitAndClick(driver,wait,Locators.getBASE_BUTTON(),"Continue");
 
 
         // Delivery selection
-        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,wait,userCredentials.getDeliveryType());
-        ClickButtonAfterWait.waitAndClick(driver,wait,"Continue");
+        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,wait,Locators.getTABLE_ROW(),Locators.getTABLE_COLUMN(),Locators.getBASE_RADIOBUTTON(),userCredentials.getDeliveryType());
+        ClickButtonAfterWait.waitAndClick(driver,wait,Locators.getBASE_BUTTON(),"Continue");
 
         // Card selection
 
-        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,wait,userCredentials.getCardHolderNameForCardSelection());
-        ClickButtonAfterWait.waitAndClick(driver,wait,"Continue");
+        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,wait,Locators.getTABLE_ROW(),Locators.getTABLE_COLUMN(),Locators.getBASE_RADIOBUTTON(),userCredentials.getCardHolderNameForCardSelection());
+        ClickButtonAfterWait.waitAndClick(driver,wait,Locators.getBASE_BUTTON(),"Continue");
 
         // Place Order Page
 
-        ClickButtonAfterWait.waitAndClick(driver,wait,"Place your order and pay");
+        ClickButtonAfterWait.waitAndClick(driver,wait,Locators.getBASE_BUTTON(),"Place your order and pay");
 
         //Assertion
         List<WebElement> elements = (List<WebElement>)JavaScriptRunner
