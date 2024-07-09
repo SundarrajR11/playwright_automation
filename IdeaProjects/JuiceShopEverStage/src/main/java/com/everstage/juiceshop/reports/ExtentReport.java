@@ -1,4 +1,4 @@
 package com.everstage.juiceshop.reports;
 
-public class ExtentReports {
+public class ExtentReport {
 }
