@@ -17,39 +17,28 @@ import java.net.URI;
 
 public class ListenerClazz implements ISuiteListener , ITestListener {
 
-    private static ExtentReports extent;
-    private static ExtentTest test;
-
     @Override
-    @SneakyThrows
     public void onStart(ISuite suite) {
-        extent = new ExtentReports();
-        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(FrameworkConstants.getEXTENT_FOLDER_PATH());
-        sparkReporter.loadJSONConfig(new File(FrameworkConstants.getSPARK_SETUP_FILE_PATH()));
-        extent.attachReporter(sparkReporter);
+        ExtentReport.initReports();
+    }
+    @Override
+    public void onFinish(ISuite suite) {
+        ExtentReport.flushReports();
     }
 
     @Override
     public void onTestStart(ITestResult result) {
-        test=extent.createTest(result.getMethod().getMethodName());
+        ExtentReport.createTest(result);
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        test.pass(String.format("%s is Passed!",result.getMethod().getMethodName()));
+        ExtentReport.pass(result);
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        test.fail(String.format("%s is Failed!",result.getMethod().getMethodName()));
-        test.fail(result.getThrowable());
-        
+        ExtentReport.fail(result);
     }
 
-    @Override
-    @SneakyThrows
-    public void onFinish(ISuite suite) {
-        extent.flush();
-        Desktop.getDesktop().browse(new File(FrameworkConstants.getEXTENT_FOLDER_PATH()).toURI());
-    }
 }
