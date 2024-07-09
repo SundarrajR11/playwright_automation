@@ -3,6 +3,6 @@
   "password": "SunJuice@11",
   "product": "Lemon Juice (500ml)",
   "nameForAddressSelection": "Sundarraj",
-  "deliveryType": "One Day Delivery",
-  "cardHolderNameForCardSelection": "Hassie Treutel"
+  "deliveryDays": "5 Days",
+  "cardHolderNameForCardSelection": "Sunfs"
 }

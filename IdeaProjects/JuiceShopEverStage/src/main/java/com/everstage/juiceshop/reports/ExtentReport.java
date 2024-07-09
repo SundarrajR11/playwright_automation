@@ -36,10 +36,18 @@ public class ExtentReport {
         test.pass(String.format("%s is Passed!",result.getMethod().getMethodName()));
     }
     public static void fail(ITestResult result){
-        test.fail(String.format("%s is Failed!",result.getMethod().getMethodName()),
-                MediaEntityBuilder.createScreenCaptureFromBase64String(
-                        ScreenshotTaker.getScreenshotAsBaseString()
-                ).build());
-        test.fail(result.getThrowable());
+        if(!(result.getMethod().getMethodName().endsWith("Call"))) {
+            test.fail(String.format("%s is Failed!", result.getMethod().getMethodName()),
+                    MediaEntityBuilder.createScreenCaptureFromBase64String(
+                            ScreenshotTaker.getScreenshotAsBaseString()
+                    ).build());
+            test.fail(result.getThrowable());
+        }
+        else {
+            test.fail(String.format("%s is Failed!", result.getMethod().getMethodName()));
+        }
+    }
+    public static void skip(ITestResult result){
+        test.skip(String.format("%s is Skipped!",result.getMethod().getMethodName()));
     }
 }

@@ -10,6 +10,6 @@ public class LoginInputBuilder {
     private String password;
     private String product;
     private String nameForAddressSelection;
-    private String deliveryType;
+    private String deliveryDays;
     private String cardHolderNameForCardSelection;
 }

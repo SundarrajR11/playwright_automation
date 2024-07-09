@@ -1,0 +1,19 @@
+
+‚
+java:S1161+":Add the "@Override" annotation above this method signature(–é¹¦ùÿÿÿÿ8öı—º‰2J$6feba4de-6816-40dd-bd97-e929a5cccd17
+
+java:S1128"GRemove this unused import 'com.aventstack.extentreports.ExtentReports'.(ûî•şÿÿÿÿ8£–º‰2J$1ca9fd04-bc81-4c71-bbfa-705a1c5c9c6f
+‡
+java:S1128"DRemove this unused import 'com.aventstack.extentreports.ExtentTest'.(‹Ë™ä8£–º‰2J$0671c38a-c82e-4a15-ba4e-ebb4edeb2da9
+™
+java:S1128"VRemove this unused import 'com.aventstack.extentreports.reporter.ExtentSparkReporter'.(î²Ğ»8£–º‰2J$f24d2f65-15d0-460c-96b0-cd5104af52cd
+™
+java:S1128"QRemove this unused import 'com.everstage.juiceshop.constants.FrameworkConstants'.(‰Æ€…úÿÿÿÿ8£–º‰2J$52d49579-1c07-43da-a4cf-1904375b3f7d
+x
+java:S1128"0Remove this unused import 'lombok.SneakyThrows'.(¨³üÖûÿÿÿÿ8£–º‰2J$d4ca9504-126b-47a9-a799-fb98e1cbc5f7
+h
+java:S1128"%Remove this unused import 'java.awt'.(ï´µ©8Ÿ£–º‰2J$60b89936-8f25-427a-83ac-c0787fafa374
+l
+java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8Ÿ£–º‰2J$b7e0e190-643b-4577-846a-a60c8097440c
+l
+java:S1128")Remove this unused import 'java.net.URI'.(Ö¦¨°8Ÿ£–º‰2J$24b714ac-ec64-44a0-a52b-f29d48370e96

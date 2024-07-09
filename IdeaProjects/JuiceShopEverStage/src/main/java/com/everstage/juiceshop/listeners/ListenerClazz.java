@@ -40,5 +40,8 @@ public class ListenerClazz implements ISuiteListener , ITestListener {
     public void onTestFailure(ITestResult result) {
         ExtentReport.fail(result);
     }
+    public void onTestSkipped(ITestResult result) {
+        ExtentReport.skip(result);
+    }
 
 }

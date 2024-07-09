@@ -13,7 +13,7 @@ import java.util.List;
 
 public class UITests extends BasicTest{
     @Test
-    public void Test() {
+    public void UITest() {
 
         // Sweet Alert
         String btnDismiss = DynamicXpath.getDesiredXpath(Locators.getBASE_BUTTON(), "Dismiss");
@@ -46,7 +46,7 @@ public class UITests extends BasicTest{
 
 
         // Delivery selection
-        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,wait,Locators.getTABLE_ROW(),Locators.getTABLE_COLUMN(),Locators.getBASE_RADIOBUTTON(),userCredentials.getDeliveryType());
+        ClickRadioBtnInWebTable.clickRadioBtnInWebTable(driver,wait,Locators.getTABLE_ROW(),Locators.getTABLE_COLUMN(),Locators.getBASE_RADIOBUTTON(),userCredentials.getDeliveryDays());
         ClickButtonAfterWait.waitAndClick(driver,wait,Locators.getBASE_BUTTON(),"Continue");
 
         // Card selection

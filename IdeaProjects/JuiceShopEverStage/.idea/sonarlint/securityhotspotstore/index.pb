@@ -57,3 +57,5 @@ o
 ?src/main/java/com/everstage/juiceshop/reports/ExtentReport.java,5\5\55d37f375dc1ee83d1aae0815b45eb7c1235f5ba
 p
 @src/main/java/com/everstage/juiceshop/utils/ScreenshotTaker.java,5\f\5fbe2b38da908364a38b17fb8ae59847bd987a85
+M
+extent-test-output/index.html,c\4\c4f71f497ad0ee8e21873ac0ee015ac9c182b3c9
