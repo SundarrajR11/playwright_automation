@@ -3,14 +3,20 @@ package com.everstage.juiceshop.reports;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.markuputils.CodeLanguage;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.everstage.juiceshop.constants.FrameworkConstants;
+import com.everstage.juiceshop.utils.FileReadAndWriter;
 import com.everstage.juiceshop.utils.ScreenshotTaker;
 import lombok.SneakyThrows;
 import org.testng.ITestResult;
 
 import java.awt.*;
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
 
 public class ExtentReport {
     private ExtentReport(){}
@@ -32,8 +38,23 @@ public class ExtentReport {
     public static void createTest(ITestResult result){
         test=extent.createTest(result.getMethod().getMethodName());
     }
+    @SneakyThrows
     public static void pass(ITestResult result){
-        test.pass(String.format("%s is Passed!",result.getMethod().getMethodName()));
+        if(result.getMethod().getMethodName().startsWith("post")) {
+            test.pass(String.format("%s is Passed!", result.getMethod().getMethodName()));
+            test.pass(MarkupHelper.createCodeBlock(FileReadAndWriter.readJsonAndReturnAsString(FrameworkConstants.getPOST_RESPONSE_PATH()),CodeLanguage.JSON));
+        }
+        else if(result.getMethod().getMethodName().startsWith("get")){
+            test.pass(String.format("%s is Passed!", result.getMethod().getMethodName()));
+            test.pass(MarkupHelper.createCodeBlock(FileReadAndWriter.readJsonAndReturnAsString(FrameworkConstants.getGET_RESPONSE_PATH()),CodeLanguage.JSON));
+        }
+        else if(result.getMethod().getMethodName().startsWith("delete")){
+            test.pass(String.format("%s is Passed!", result.getMethod().getMethodName()));
+            test.pass(MarkupHelper.createCodeBlock(FileReadAndWriter.readJsonAndReturnAsString(FrameworkConstants.getDELETE_RESPONSE_PATH()),CodeLanguage.JSON));
+        }
+        else {
+            test.pass(String.format("%s is Passed!", result.getMethod().getMethodName()));
+        }
     }
     public static void fail(ITestResult result){
         if(!(result.getMethod().getMethodName().endsWith("Call"))) {

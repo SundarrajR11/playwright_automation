@@ -4,8 +4,6 @@
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-p
-@src/main/java/com/everstage/juiceshop/reports/ReportManager.java,c\3\c3f1c11d3272db8ac482f8277fc5ce8643cf8c13
 L
 src/test/java/BasicTest.java,9\a\9a9d296b7a73af5542259ee49b8cb87a97d41826
 w
@@ -48,9 +46,6 @@ Xsrc/main/java/com/everstage/juiceshop/customexceptions/UnableToClickButtonExcep
 Rsrc/main/java/com/everstage/juiceshop/customexceptions/NullValueSentException.java,2\2\226e2c88f22b9abf0da081370d2bbe46370779e6
 o
 ?src/main/java/com/everstage/juiceshop/driver/DriverManager.java,3\4\340f3e32fc85c5c84a9c33bcf7329aeacfe8d081
-:
-
-testng.xml,5\2\522a7a4e21649af06297e31a9e33f13bb4fd3022
 r
 Bsrc/main/java/com/everstage/juiceshop/listeners/ListenerClazz.java,b\a\ba9e3d2ce6e3e947f6b99aec38291ef8cdaedc55
 o
@@ -59,3 +54,8 @@ p
 @src/main/java/com/everstage/juiceshop/utils/ScreenshotTaker.java,5\f\5fbe2b38da908364a38b17fb8ae59847bd987a85
 M
 extent-test-output/index.html,c\4\c4f71f497ad0ee8e21873ac0ee015ac9c182b3c9
+:
+
+testng.xml,5\2\522a7a4e21649af06297e31a9e33f13bb4fd3022
+r
+Bsrc/main/java/com/everstage/juiceshop/utils/FileReadAndWriter.java,c\2\c2da33bfd62423aa540cd71fa42616c3fbda5028

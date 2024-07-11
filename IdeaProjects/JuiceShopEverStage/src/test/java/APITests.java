@@ -1,13 +1,19 @@
+import com.everstage.juiceshop.constants.FrameworkConstants;
 import com.everstage.juiceshop.pojo.ReqBodyForCardCreationBuilder;
 import com.everstage.juiceshop.requestBuilders.RequestBuilders;
+import com.everstage.juiceshop.utils.FileReadAndWriter;
 import com.everstage.juiceshop.utils.RandomValueProvider;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
+import lombok.SneakyThrows;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import static org.hamcrest.Matchers.equalTo;
 
@@ -15,6 +21,7 @@ public final class APITests {
     private APITests(){}
 
     int id =0;
+    @SneakyThrows
     @Test()
     public void postCall() {
 
@@ -31,6 +38,9 @@ public final class APITests {
         postResponse.prettyPrint();
         id = postResponse.jsonPath().getInt("data.id");
 
+        // Writing response
+        FileReadAndWriter.writeJsonAndStoreAsString(FrameworkConstants.getPOST_RESPONSE_PATH(),postResponse);
+
         // Assertions
         postResponse.then()
                 .assertThat()
@@ -46,6 +56,10 @@ public final class APITests {
                 .get("/api/Cards/{id}");
         getResponse.prettyPrint();
 
+        // Writing Response
+        FileReadAndWriter.writeJsonAndStoreAsString(FrameworkConstants.getGET_RESPONSE_PATH(),getResponse);
+
+
         // Assertions
         getResponse.then()
                 .assertThat()
@@ -59,6 +73,9 @@ public final class APITests {
                 .pathParam("id",id)
                 .delete("/api/Cards/{id}");
         deleteResponse.prettyPrint();
+
+        // Writing Response
+        FileReadAndWriter.writeJsonAndStoreAsString(FrameworkConstants.getDELETE_RESPONSE_PATH(),deleteResponse);
 
         // Assertions
         deleteResponse.then()
