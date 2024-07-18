@@ -1,11 +1,0 @@
-
-™
-java:S1128"QRemove this unused import 'com.everstage.juiceshop.constants.FrameworkConstants'.(‰Æ€…úÿÿÿÿ8–ÃÖå‰2J$6696024b-6d17-404d-b153-25771d1619f7
-œ
-java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ª’—ùÿÿÿÿ8—ÃÖå‰2J$4db98c53-b6fe-4824-84d1-3c1c0e40a376
-d
-java:S1128"GRemove this unused import 'org.openqa.selenium.NoSuchElementException'.(“®ü‰8²³Ùå‰2
-c
-java:S1128"FRemove this unused import 'org.openqa.selenium.support.ui.FluentWait'.(Æ÷·Ü8²³Ùå‰2
-Q
-java:S1128"/Remove this unused import 'java.time.Duration'.(ëá¯‰üÿÿÿÿ8³³Ùå‰2
